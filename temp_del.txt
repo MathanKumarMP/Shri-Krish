@@ -1,0 +1,196 @@
+
+
+                <!-- Interactive SVG Map -->
+                <div class="location-map-visual reveal-left">
+                    <span class="section-tag">Location Advantage</span>
+                    <h2 class="section-title">Prime Location.<br><span class="text-orange">Limitless Potential.</span>
+                    </h2>
+                    <p class="location-intro-desc" style="margin-bottom: 2rem;">Strategically located in Illalur,
+                        Thiruporur - OMR, at the heart of Chennai's fastest-growing corridor.</p>
+
+                    <div class="interactive-map-wrapper">
+                        <!-- Compass -->
+                        <div class="compass-rose">
+                            <i class="fa-solid fa-compass"></i>
+                            <span>N</span>
+                        </div>
+
+                        <svg viewBox="0 0 800 600" class="svg-map-graphic">
+                            <!-- Land Area -->
+                            <rect width="800" height="600" fill="#ffd6ba25" rx="20" />
+
+                            <!-- Sea Area (ECR Coastline) -->
+                            <path d="M 680 0 Q 690 150 710 300 T 730 600 L 800 600 L 800 0 Z" fill="#d0e1fd"
+                                opacity="0.6" />
+
+                            <!-- ECR Coastal Road (Gray Route) -->
+                            <path d="M 640 0 Q 655 150 675 300 T 695 600" fill="none" stroke="#7f8c8d" stroke-width="3"
+                                stroke-dasharray="6,4" />
+                            <text x="630" y="550" fill="#7f8c8d" font-size="10" font-weight="700"
+                                transform="rotate(82, 630, 550)">ECR COASTAL ROAD</text>
+                            <text x="655" y="320" fill="#7f8c8d" font-size="10" font-weight="700"
+                                transform="rotate(82, 655, 320)">ECR</text>
+
+                            <!-- GST Road (Gray Route) -->
+                            <path d="M 120 0 L 320 600" fill="none" stroke="#7f8c8d" stroke-width="3"
+                                stroke-dasharray="6,4" />
+                            <text x="180" y="220" fill="#7f8c8d" font-size="10" font-weight="700"
+                                transform="rotate(71, 180, 220)">GST ROAD</text>
+
+                            <!-- Connecting Kelambakkam Vandalur Road -->
+                            <path d="M 230 330 L 460 380 L 665 370" fill="none" stroke="#95a5a6" stroke-width="2" />
+
+                            <!-- OMR IT Corridor Highway (Glowing Orange/Gold Route) -->
+                            <path id="omr-highway" d="M 560 0 Q 500 120 460 220 T 400 380 T 360 600" fill="none"
+                                stroke="#e96b10" stroke-width="6" stroke-linecap="round" />
+                            <!-- Glowing inner line for highway -->
+                            <path d="M 560 0 Q 500 120 460 220 T 400 380 T 360 600" fill="none" stroke="#f39c12"
+                                stroke-width="2" stroke-linecap="round" />
+                            <text x="540" y="80" fill="#e96b10" font-size="11" font-weight="800"
+                                transform="rotate(-68, 540, 80)">OMR IT CORRIDOR</text>
+
+                            <!-- Pins & Landmarks -->
+
+                            <!-- Sholinganallur -->
+                            <circle cx="538" cy="50" r="6" fill="#e96b10" stroke="#fff" stroke-width="2" />
+                            <line x1="538" y1="50" x2="490" y2="40" stroke="#e96b10" stroke-width="1" />
+                            <rect x="360" y="25" width="125" height="30" rx="4" fill="#081226" opacity="0.85" />
+                            <text x="368" y="40" fill="#fff" font-size="9" font-weight="700">SHOLINGANALLUR</text>
+                            <text x="368" y="50" fill="#e96b10" font-size="8" font-weight="700">20 MINS</text>
+
+                            <!-- Siruseri -->
+                            <circle cx="503" cy="120" r="6" fill="#e96b10" stroke="#fff" stroke-width="2" />
+                            <line x1="503" y1="120" x2="460" y2="150" stroke="#e96b10" stroke-width="1" />
+                            <rect x="385" y="145" width="70" height="30" rx="4" fill="#081226" opacity="0.85" />
+                            <text x="393" y="159" fill="#fff" font-size="9" font-weight="700">SIRUSERI</text>
+                            <text x="393" y="169" fill="#e96b10" font-size="8" font-weight="700">15 MINS</text>
+
+                            <!-- SIPCOT IT Park -->
+                            <circle cx="488" cy="150" r="5" fill="#7f8c8d" stroke="#fff" stroke-width="1.5" />
+                            <line x1="488" y1="150" x2="520" y2="180" stroke="#7f8c8d" stroke-width="1" />
+                            <rect x="520" y="170" width="100" height="30" rx="4" fill="#081226" opacity="0.85" />
+                            <text x="528" y="184" fill="#fff" font-size="9" font-weight="700">SIPCOT IT PARK</text>
+                            <text x="528" y="194" fill="#7f8c8d" font-size="8" font-weight="700">15 MINS</text>
+
+                            <!-- Proposed Metro Station -->
+                            <circle cx="468" cy="200" r="6" fill="#e96b10" stroke="#fff" stroke-width="2" />
+                            <line x1="468" y1="200" x2="410" y2="240" stroke="#e96b10" stroke-width="1" />
+                            <rect x="290" y="230" width="115" height="30" rx="4" fill="#081226" opacity="0.85" />
+                            <text x="296" y="244" fill="#fff" font-size="8" font-weight="700">PROPOSED METRO</text>
+                            <text x="296" y="254" fill="#e96b10" font-size="8" font-weight="700">5 MINS</text>
+
+                            <!-- Kelambakkam Junction -->
+                            <circle cx="454" cy="380" r="5" fill="#7f8c8d" stroke="#fff" stroke-width="1.5" />
+                            <line x1="454" y1="380" x2="510" y2="440" stroke="#7f8c8d" stroke-width="1" />
+                            <rect x="510" y="430" width="100" height="30" rx="4" fill="#081226" opacity="0.85" />
+                            <text x="518" y="444" fill="#fff" font-size="9" font-weight="700">KELAMBAKKAM</text>
+                            <text x="518" y="454" fill="#7f8c8d" font-size="8" font-weight="700">10 MINS</text>
+
+                            <!-- Muttukadu Boat House -->
+                            <circle cx="660" cy="200" r="5" fill="#16a085" stroke="#fff" stroke-width="1.5" />
+                            <line x1="660" y1="200" x2="710" y2="230" stroke="#16a085" stroke-width="1" />
+                            <rect x="710" y="220" width="80" height="35" rx="4" fill="#081226" opacity="0.85" />
+                            <text x="716" y="232" fill="#fff" font-size="8" font-weight="700">MUTTUKADU</text>
+                            <text x="716" y="242" fill="#fff" font-size="8" font-weight="700">BOAT HOUSE</text>
+                            <text x="716" y="251" fill="#16a085" font-size="7" font-weight="700">25 MINS</text>
+
+                            <!-- Chennai Airport -->
+                            <circle cx="210" cy="270" r="6" fill="#2980b9" stroke="#fff" stroke-width="2" />
+                            <line x1="210" y1="270" x2="250" y2="300" stroke="#2980b9" stroke-width="1" />
+                            <rect x="250" y="290" width="105" height="30" rx="4" fill="#081226" opacity="0.85" />
+                            <text x="256" y="304" fill="#fff" font-size="9" font-weight="700">CHENNAI AIRPORT</text>
+                            <text x="256" y="314" fill="#2980b9" font-size="8" font-weight="700">45 MINS</text>
+
+                            <!-- Thiruporur -->
+                            <circle cx="395" cy="480" r="6" fill="#e96b10" stroke="#fff" stroke-width="2" />
+                            <line x1="395" y1="480" x2="330" y2="500" stroke="#e96b10" stroke-width="1" />
+                            <rect x="260" y="490" width="85" height="30" rx="4" fill="#081226" opacity="0.85" />
+                            <text x="268" y="504" fill="#fff" font-size="9" font-weight="700">THIRUPORUR</text>
+                            <text x="268" y="514" fill="#e96b10" font-size="8" font-weight="700">2 MINS</text>
+
+                            <!-- WONDER GRAND - CENTRAL PIN -->
+                            <!-- Glowing outer ring -->
+                            <circle cx="435" cy="300" r="22" fill="#e96b10" opacity="0.15" class="pulsing-ring" />
+                            <circle cx="435" cy="300" r="14" fill="#e96b10" opacity="0.3" />
+                            <!-- Map Pin SVG shape -->
+                            <path
+                                d="M435,282 C426,282 418,290 418,299 C418,312 435,328 435,328 C435,328 452,312 452,299 C452,290 444,282 435,282 Z"
+                                fill="#e96b10" stroke="#fff" stroke-width="1.5" />
+                            <circle cx="435" cy="298" r="5" fill="#081226" />
+
+                            <!-- Callout Label for Wonder Grand -->
+                            <rect x="460" y="275" width="135" height="38" rx="6" fill="#081226" stroke="#e96b10"
+                                stroke-width="1.5" />
+                            <text x="468" y="289" fill="#fff" font-size="10" font-weight="800">WONDER GRAND</text>
+                            <text x="468" y="301" fill="#e96b10" font-size="8" font-weight="800">ILLALUR,
+                                THIRUPORUR</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="location-info reveal-right">
+                    <ul class="advantage-list">
+                        <li>
+                            <div class="adv-icon-box">
+                                <i class="fa-solid fa-road"></i>
+                            </div>
+                            <div class="adv-text">
+                                <strong>Excellent Connectivity</strong>
+                                <p>Easy access to OMR, ECR, GST Road, and major transport hubs.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="adv-icon-box">
+                                <i class="fa-solid fa-building-user"></i>
+                            </div>
+                            <div class="adv-text">
+                                <strong>IT & Business Hubs Nearby</strong>
+                                <p>Close to SIPCOT, Sholinganallur, Siruseri, and major IT parks.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="adv-icon-box">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div class="adv-text">
+                                <strong>Top Schools & Institutions</strong>
+                                <p>Surrounded by reputed schools, colleges & healthcare centers.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Bottom Quick Stats -->
+                    <div class="location-bottom-stats" style="margin-top: 2rem;">
+                        <div class="bottom-stat-card">
+                            <i class="fa-solid fa-car-side"></i>
+                            <div>
+                                <h4>2 MINS</h4>
+                                <p>To Thiruporur</p>
+                            </div>
+                        </div>
+                        <div class="bottom-stat-card">
+                            <i class="fa-solid fa-train-subway"></i>
+                            <div>
+                                <h4>5 MINS</h4>
+                                <p>To Proposed Metro</p>
+                            </div>
+                        </div>
+                        <div class="bottom-stat-card">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <div>
+                                <h4>15 MINS</h4>
+                                <p>To SIPCOT IT Park</p>
+                            </div>
+                        </div>
+                        <div class="bottom-stat-card">
+                            <i class="fa-solid fa-plane"></i>
+                            <div>
+                                <h4>45 MINS</h4>
+                                <p>To Chennai Airport</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
