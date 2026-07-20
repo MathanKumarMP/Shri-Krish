@@ -246,12 +246,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const enquiryForm = document.getElementById('enquiryForm');
     const enquiryStatus = document.getElementById('enquiryStatus');
     let enquiryDismissed = false;
+    let enquiryAttempted = false;
+
+    const resetEnquiryForm = () => {
+        if (!enquiryForm) return;
+        enquiryForm.reset();
+        enquiryAttempted = false;
+        enquiryForm.querySelectorAll('.enquiry-error').forEach(error => {
+            error.classList.remove('is-visible');
+        });
+        enquiryForm.querySelectorAll('.enquiry-field, .enquiry-question').forEach(group => {
+            group.classList.remove('has-error');
+        });
+        if (enquiryStatus) enquiryStatus.textContent = '';
+    };
 
     const closeEnquiry = () => {
         enquiryModal.classList.remove('is-open');
         enquiryModal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('modal-open');
+        document.documentElement.classList.remove('modal-open');
         enquiryDismissed = true;
+        resetEnquiryForm();
     };
 
     const openEnquiry = (force = false) => {
@@ -259,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         enquiryModal.classList.add('is-open');
         enquiryModal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
+        document.documentElement.classList.add('modal-open');
         window.removeEventListener('scroll', openOnScroll);
     };
 
@@ -290,7 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
             group?.classList.toggle('has-error', show);
         };
 
-        let enquiryAttempted = false;
         const validateEnquiry = (forceShow = false) => {
             const name = document.getElementById('enquiryName');
             const phone = document.getElementById('enquiryPhone');
@@ -320,8 +336,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     field.value = field.value.replace(/\D/g, '').slice(0, 10);
                 });
             }
-            field.addEventListener('input', validateEnquiry);
-            field.addEventListener('change', validateEnquiry);
+            field.addEventListener('input', () => validateEnquiry(false));
+            field.addEventListener('change', () => validateEnquiry(false));
         });
 
         enquiryForm.addEventListener('submit', (event) => {
@@ -331,6 +347,59 @@ document.addEventListener('DOMContentLoaded', () => {
             enquiryStatus.textContent = 'Thank you! Our plot advisor will contact you shortly.';
             enquiryForm.reset();
             setTimeout(closeEnquiry, 2200);
+        });
+    }
+
+    // --- AMENITIES AUTO SCROLL ON MOBILE ---
+    const amenitiesInner = document.querySelector('.amenities-strip-inner');
+    if (amenitiesInner) {
+        let scrollSpeed = 1; // pixels per step
+        let scrollInterval;
+        let isUserInteracting = false;
+        let resumeTimeout;
+
+        const startAutoScroll = () => {
+            if (scrollInterval) clearInterval(scrollInterval);
+            scrollInterval = setInterval(() => {
+                if (window.innerWidth <= 768 && !isUserInteracting) {
+                    const maxScrollLeft = amenitiesInner.scrollWidth - amenitiesInner.clientWidth;
+                    if (amenitiesInner.scrollLeft >= maxScrollLeft - 1) {
+                        amenitiesInner.scrollLeft = 0; // reset to beginning
+                    } else {
+                        amenitiesInner.scrollLeft += scrollSpeed;
+                    }
+                }
+            }, 30);
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(scrollInterval);
+        };
+
+        const handleUserInteraction = () => {
+            isUserInteracting = true;
+            clearTimeout(resumeTimeout);
+            resumeTimeout = setTimeout(() => {
+                isUserInteracting = false;
+            }, 3000);
+        };
+
+        amenitiesInner.addEventListener('touchstart', handleUserInteraction, { passive: true });
+        amenitiesInner.addEventListener('touchmove', handleUserInteraction, { passive: true });
+        amenitiesInner.addEventListener('mousedown', () => { isUserInteracting = true; });
+        amenitiesInner.addEventListener('mouseup', () => {
+            clearTimeout(resumeTimeout);
+            resumeTimeout = setTimeout(() => { isUserInteracting = false; }, 3000);
+        });
+
+        startAutoScroll();
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                stopAutoScroll();
+            } else {
+                startAutoScroll();
+            }
         });
     }
 });
